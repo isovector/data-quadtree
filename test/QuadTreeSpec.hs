@@ -2,7 +2,7 @@
 
 {-# OPTIONS_GHC -Wno-orphans #-}
 
-module QuadAreaTreeSpec where
+module QuadTreeSpec where
 
 import           Control.Monad (guard)
 import           Data.Foldable (for_)
@@ -147,8 +147,8 @@ spec = do
   prop "tile / fill is id" $ \(q :: QuadTree String) ->
     foldr (uncurry fill) (makeTree $ bounds q) (tile q) =-= q
 
-  focus $ prop "semigroup qat" $ \v q1 q2 ->
-    getLocation @(Sum Int) q1 v <> getLocation q2 v =-= getLocation (q1 <> q2) v
+--   prop "semigroup qat" $ \v q1 q2 ->
+--     getLocation @(Sum Int) q1 v <> getLocation q2 v =-= getLocation (q1 <> q2) v
 
   prop "subdivisions do not intersect" $ \r ->
     let Quad tl tr bl br = subdivide r

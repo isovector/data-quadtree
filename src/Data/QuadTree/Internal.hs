@@ -29,7 +29,7 @@ instance Applicative Quadrant where
   Node f <*> Node a = Node $ liftA2 (<*>) f a
 
 
--- TODO(sandy): doesn't satisfy the laws. not sure why, but I don't need this.
+-- TODO(sandy): doesn't satisfy the ap law. not sure why, but I don't need this.
 
 -- instance Monad Quadrant where
 --   Leaf a >>= f = f a

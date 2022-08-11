@@ -101,7 +101,6 @@ test-suite marlo-tests
   main-is: Main.hs
   other-modules:
       QuadTreeSpec
-      Spec
       Paths_data_quadtree
   hs-source-dirs:
       test
@@ -163,13 +162,14 @@ test-suite marlo-tests
       ViewPatterns
   ghc-options: -Wall -threaded -rtsopts -with-rtsopts=-N
   build-tool-depends:
-      QuickCheck:QuickCheck
-    , checkers:checkers
-    , hspec-discover:hspec-discover
+      hspec-discover:hspec-discover
   build-depends:
-      base >=4.7 && <5
+      QuickCheck
+    , base >=4.7 && <5
+    , checkers
     , containers
-    , data-quadtre
+    , data-quadtree
     , gdp
+    , hspec
     , linear
   default-language: Haskell2010

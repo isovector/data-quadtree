@@ -97,8 +97,9 @@ tests:
     - -rtsopts
     - -with-rtsopts=-N
     dependencies:
-    - data-quadtre
-    build-tools:
+    - data-quadtree
+    - hspec
     - QuickCheck
     - checkers
+    build-tools:
     - hspec-discover
